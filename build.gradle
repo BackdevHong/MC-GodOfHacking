@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm' version '2.0.0-Beta2'
+    id("com.github.johnrengelman.shadow") version '8.1.1'
 }
 
 group = 'org.server'
@@ -45,6 +46,16 @@ processResources {
         expand props
     }
 }
+
 kotlin {
     jvmToolchain(17)
 }
+
+shadowJar{
+    archivesBaseName = 'GodOfHacking'
+    destinationDirectory = file("/Users/hong-inseong/Desktop/Coding/server/plugins")
+    manifest {
+        attributes 'Main-Class': 'org.server.godofhacking.GodOfHacking'
+    }
+}
+
