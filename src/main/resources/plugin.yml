@@ -1,0 +1,4 @@
+name: GodOfHacking
+version: '${version}'
+main: org.server.godofhacking.GodOfHacking
+api-version: '1.20'
